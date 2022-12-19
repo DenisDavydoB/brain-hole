@@ -1,0 +1,30 @@
+{
+  "name": "brain-hole",
+  "version": "1.0.0",
+  "packageManager": "yarn@3.3.0",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "api",
+    "ui"
+  ],
+  "scripts": {
+    "style": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,html,json,yml,yaml}\"",
+    "lint": "eslint \"**/*.{js,cjs,mjs,ts,tsx}\"",
+    "stylecheck": "prettier --check \"**/*.{html,json,yml,yaml}\"",
+    "typecheck": "yarn workspaces foreach run typecheck"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.44.0",
+    "@typescript-eslint/parser": "5.44.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0",
+    "typescript": "4.9.3"
+  },
+  "repository": "git@github.com:DenisDavydoB/brain-hole.git",
+  "author": "Denis Davydov <ivnssnn@gmail.com>",
+  "license": "MIT"
+}
