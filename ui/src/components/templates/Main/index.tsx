@@ -1,11 +1,11 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from 'react'
 
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 export default function MainTemplate(props: Props): ReactElement {
-  const { children } = props;
+  const { children } = props
 
-  return <>{children}</>;
+  return <>{children}</>
 }
