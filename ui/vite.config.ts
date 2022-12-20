@@ -1,8 +1,8 @@
-import { fileURLToPath } from "node:url";
-import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { fileURLToPath } from 'node:url'
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
 
-const PORT_DEFAULT = 3000;
+const PORT_DEFAULT = 3000
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,15 +11,15 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   plugins: [react()],
-});
+})
 
 function getPort(): number {
-  const port = process.env.PORT;
-  const parsed = port != null ? parseInt(port, 10) : PORT_DEFAULT;
+  const port = process.env.PORT
+  const parsed = port != null ? parseInt(port, 10) : PORT_DEFAULT
 
-  return parsed;
+  return parsed
 }

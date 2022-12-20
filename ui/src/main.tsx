@@ -1,11 +1,11 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import Application from "./application.js";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import Application from './application.js'
 
-const $root = document.querySelector("#app");
+const $root = document.querySelector('#app')
 
-if ($root == null) throw new TypeError("Root element not found");
+if ($root == null) throw new TypeError('Root element not found')
 
 createRoot($root).render(
   <StrictMode>
@@ -13,4 +13,4 @@ createRoot($root).render(
       <Application />
     </BrowserRouter>
   </StrictMode>
-);
+)

@@ -7,18 +7,14 @@ module.exports = {
   },
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
-  extends: [
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-  ],
+  extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:react-hooks/recommended'],
   rules: {
-    "react/jsx-no-leaked-render": ["error", { validStrategies: ["ternary"] }],
-    "react/jsx-sort-props": [
-      "error",
+    'react/jsx-no-leaked-render': ['error', { validStrategies: ['ternary'] }],
+    'react/jsx-sort-props': [
+      'error',
       {
         callbacksLast: true,
         reservedFirst: true,
@@ -26,4 +22,4 @@ module.exports = {
       },
     ],
   },
-};
+}
