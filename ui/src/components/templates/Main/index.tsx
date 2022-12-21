@@ -1,4 +1,7 @@
+import { Stack } from '@mui/material'
 import { ReactElement, ReactNode } from 'react'
+import Footer from '@/components/molecules/Footer/index.js'
+import Header from '@/components/molecules/Header/index.js'
 
 type Props = {
   children: ReactNode
@@ -7,5 +10,11 @@ type Props = {
 export default function MainTemplate(props: Props): ReactElement {
   const { children } = props
 
-  return <>{children}</>
+  return (
+    <Stack alignItems="center" direction="column" minHeight="100%" width="100%">
+      <Header />
+      {children}
+      <Footer />
+    </Stack>
+  )
 }
