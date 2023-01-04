@@ -463,7 +463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
   version: 7.20.6
   resolution: "@babel/runtime@npm:7.20.6"
   dependencies:
@@ -562,6 +562,7 @@ __metadata:
     "@mui/material": ^5.11.0
     "@types/react": ^18.0.26
     "@types/react-dom": ^18.0.9
+    "@types/uuid": ^9.0.0
     "@vitejs/plugin-react": ^3.0.0
     eslint-plugin-react: ^7.31.11
     eslint-plugin-react-hooks: ^4.6.0
@@ -569,6 +570,7 @@ __metadata:
     react-dom: ^18.2.0
     react-router-dom: ^6.5.0
     typescript: ^4.9.3
+    uuid: ^9.0.0
     vite: ^4.0.0
   peerDependencies:
     eslint: "*"
@@ -2024,6 +2026,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@types/uuid@npm:9.0.0"
+  checksum: 59ae56d9547c8758588659da2a2b4c97cce79c2aae1798c892bb29452ef08e87859dea2ec3a66bfa88d0d2153147520be2b1893be920f9f0bc9c53a3207ea6aa
+  languageName: node
+  linkType: hard
+
 "@types/yargs-parser@npm:*":
   version: 21.0.0
   resolution: "@types/yargs-parser@npm:21.0.0"
@@ -2971,7 +2980,7 @@ __metadata:
     eslint-plugin-import: ^2.26.0
     eslint-plugin-prettier: ^4.2.1
     prettier: ^2.8.0
-    react-flippy: ^1.1.0
+    react-card-flip: ^1.2.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
@@ -7065,6 +7074,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-card-flip@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "react-card-flip@npm:1.2.0"
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: b31747790990da4899bece005538851a1671e06868561a6cf577cc0b49d86dab6fb7dbb80db4cc9713ea3fc4db7d26c6ebc6fb0cdc215220c70f5db8f0d9cd8f
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -7074,18 +7093,6 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
   checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
-  languageName: node
-  linkType: hard
-
-"react-flippy@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "react-flippy@npm:1.1.0"
-  dependencies:
-    "@babel/runtime": ^7.14.0
-  peerDependencies:
-    react: ^17.0.2
-    react-dom: ^17.0.2
-  checksum: 5f1a6beb203f7f56db702613e3f6b8c72fc6988a5ba0d3f4697023ca31cc832ec6e2d905484c88d9b99b83b3ee51cec94ac4559c287bd2360c8e15e8f93d6b68
   languageName: node
   linkType: hard
 
@@ -8424,6 +8431,15 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "uuid@npm:9.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 8dd2c83c43ddc7e1c71e36b60aea40030a6505139af6bee0f382ebcd1a56f6cd3028f7f06ffb07f8cf6ced320b76aea275284b224b002b289f89fe89c389b028
   languageName: node
   linkType: hard
 
