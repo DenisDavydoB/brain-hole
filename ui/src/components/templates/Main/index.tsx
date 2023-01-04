@@ -11,7 +11,7 @@ export default function MainTemplate(props: Props): ReactElement {
   const { children } = props
 
   return (
-    <Stack alignItems="center" direction="column" minHeight="100%" width="100%">
+    <Stack alignItems="center" direction="column" width="100%">
       <Header />
       {children}
       <Footer />
