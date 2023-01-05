@@ -1,20 +1,22 @@
 import { v4 as uuid } from 'uuid'
 import type { CardItem } from './types.js'
 
-export const cards: CardItem[] = []
+const CARD_PAIRS_NUMBER = 8
 
 export default function getCards(): CardItem[] {
-  while (cards.length < 18) {
-    addCard(cards, `./items/donut_${cards.length + 1}.png`)
+  const cards: CardItem[] = []
+
+  for (let index = 0; index < CARD_PAIRS_NUMBER; index++) {
+    addCardPair(cards, `./items/donut_${index + 1}.png`)
   }
 
-  const result = [...cards]
-
-  return result.sort(shuffle)
+  return cards.sort(shuffle)
 }
 
-const addCard = (cards: CardItem[], url: string) => {
-  cards.push({ id: uuid(), url })
+const addCardPair = (cards: CardItem[], url: string) => {
+  const cardId = uuid()
+  cards.push({ id: uuid(), cardId, url })
+  cards.push({ id: uuid(), cardId, url })
 
   return cards
 }
