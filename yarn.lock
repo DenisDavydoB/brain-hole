@@ -564,6 +564,9 @@ __metadata:
     "@types/react-dom": ^18.0.9
     "@types/uuid": ^9.0.0
     "@vitejs/plugin-react": ^3.0.0
+    effector: ^22.4.1
+    effector-react: ^22.4.0
+    eslint-plugin-effector: ^0.10.3
     eslint-plugin-react: ^7.31.11
     eslint-plugin-react-hooks: ^4.6.0
     react: ^18.2.0
@@ -3678,6 +3681,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"effector-react@npm:^22.4.0":
+  version: 22.4.0
+  resolution: "effector-react@npm:22.4.0"
+  dependencies:
+    use-sync-external-store: ^1.0.0
+  peerDependencies:
+    effector: ^22.0.2
+    react: ">=16.8.0 <19.0.0"
+  checksum: b0f6ff5e037ecefaeb6e0aa2c336693d5aca41f20baedd493045aa5717f5e0bb65994d5a4e0ea3a3712e4387a424b3cb579fdb5fe8b5456a4d3bbcbbe550f50a
+  languageName: node
+  linkType: hard
+
+"effector@npm:^22.4.1":
+  version: 22.4.1
+  resolution: "effector@npm:22.4.1"
+  checksum: 2471d51ccf97ac4627bca51171e4988956d0cc81820bc40edb41b5bf0c01272843dc3b864a41682bdc33d67109003e343ad17cd1b2391498305f09dd03abf53c
+  languageName: node
+  linkType: hard
+
 "electron-to-chromium@npm:^1.4.251":
   version: 1.4.284
   resolution: "electron-to-chromium@npm:1.4.284"
@@ -3959,6 +3981,18 @@ __metadata:
     eslint:
       optional: true
   checksum: 5da13645daff145a5c922896b258f8bba560722c3767254e458d894ff5fbb505d6dfd945bffa932a5b0ae06714da2379bd41011c4c20d2d59cc83e23895360f7
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-effector@npm:^0.10.3":
+  version: 0.10.3
+  resolution: "eslint-plugin-effector@npm:0.10.3"
+  dependencies:
+    prettier: ^2.3.2
+  peerDependencies:
+    effector: "*"
+    eslint: 7 || 8
+  checksum: 4852011200a4a2eaa2fea04518ba726b4325e45602c107c4ba7a3aaba3a1c1f7eca60804f9d83e48258514d9a03b1814f000bdb23dfc1e428bd42a2e127f87d1
   languageName: node
   linkType: hard
 
@@ -8408,6 +8442,15 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 7167432de6817fe8e9e0c9684f1d2de2bb688c94388f7569f7dbdb1587c9f4ca2a77962f134ec90be0cc4d004c939ff0d05acc9f34a0db39a3c797dada262633
+  languageName: node
+  linkType: hard
+
+"use-sync-external-store@npm:^1.0.0":
+  version: 1.2.0
+  resolution: "use-sync-external-store@npm:1.2.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 5c639e0f8da3521d605f59ce5be9e094ca772bd44a4ce7322b055a6f58eeed8dda3c94cabd90c7a41fb6fa852210092008afe48f7038792fd47501f33299116a
   languageName: node
   linkType: hard
 
