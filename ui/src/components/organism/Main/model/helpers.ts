@@ -22,3 +22,9 @@ const addCard = (cards: CardItem[], url: string) => {
 const shuffle = () => {
   return Math.random() - 0.5
 }
+
+export function wait(ms: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}

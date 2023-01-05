@@ -8,7 +8,7 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 2022,
   },
-  plugins: ['import'],
+  plugins: ['import', 'effector'],
   rules: {
     'no-restricted-imports': [
       'error',
