@@ -22,7 +22,7 @@ export default function Card(props: Props): ReactElement {
   const cardBack = <img height="100%" src={card.url} width="100%" />
 
   return (
-    <Grid item xs={2}>
+    <Grid item xs={3}>
       <FlippyCard
         back={cardBack}
         front={cardFront}
