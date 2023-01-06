@@ -1,7 +1,7 @@
 import { Grid, Stack } from '@mui/material'
 import Card from './components/Card/index.js'
 import Timer from './components/Timer/index.js'
-import { useCards } from './model/index.js'
+import { useCards } from './model/hooks.js'
 import { Container } from './styles.js'
 
 export default function Main() {

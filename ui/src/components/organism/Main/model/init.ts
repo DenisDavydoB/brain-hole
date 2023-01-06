@@ -1,6 +1,10 @@
-import { createEvent, createStore } from 'effector'
+import { createEvent, createStore, restore } from 'effector'
+import { ApplicationStateEnum } from './enums.js'
 import getCards from './helpers.js'
 import type { CardItem } from './types.js'
+
+const setAppState = createEvent<ApplicationStateEnum>()
+export const $applicationState = restore(setAppState, ApplicationStateEnum.idle)
 
 export const $staticCards = createStore<CardItem[]>(getCards())
 export const $guessedCards = createStore<CardItem[]>([])
