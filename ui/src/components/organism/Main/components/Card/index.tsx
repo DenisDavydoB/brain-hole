@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
 import { ReactElement } from 'react'
 import { useOpenedCards } from '../../model/hooks.js'
-import { openCard } from '../../model/store.js'
+import { openCard } from '../../model/init.js'
 import type { CardItem } from '../../model/types.js'
 import FlippyCard from '@/components/molecules/FlippyCard/index.js'
 
