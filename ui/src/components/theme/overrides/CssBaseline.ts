@@ -1,4 +1,5 @@
 import { Components } from '@mui/material'
+import { deepOrange } from '@mui/material/colors'
 
 export default function CssBaseline(): Components {
   return {
@@ -14,6 +15,7 @@ export default function CssBaseline(): Components {
           height: '100%',
         },
         body: {
+          backgroundColor: deepOrange[200],
           width: '100%',
           height: '100%',
           touchAction: 'manipulation',

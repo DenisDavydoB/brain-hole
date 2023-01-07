@@ -26,8 +26,5 @@
   },
   "repository": "git@github.com:DenisDavydoB/brain-hole.git",
   "author": "Denis Davydov <ivnssnn@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "react-card-flip": "^1.2.0"
-  }
+  "license": "MIT"
 }
