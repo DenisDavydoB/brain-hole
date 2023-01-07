@@ -1,6 +1,6 @@
 export enum ApplicationStateEnum {
-  idle = 'idle',
-  init = 'init',
-  run = 'run',
-  done = 'done',
+  Idle = 'idle',
+  Init = 'init',
+  Run = 'run',
+  Done = 'done',
 }
