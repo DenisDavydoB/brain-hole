@@ -4,13 +4,17 @@ import { wait } from '@/shared/utils/wait.js'
 
 const DEFAULT_TIMER_RESOLUTION = 1000
 
-export function createTimer(
-  name: string,
-  start: Event<void>,
-  stop: Event<void>,
-  reset: Event<void>,
-  resolution = DEFAULT_TIMER_RESOLUTION
-) {
+type TimerProps = {
+  name: string
+  start: Event<void>
+  stop: Event<void>
+  reset: Event<void>
+  resolution?: number
+}
+
+export function createTimer(props: TimerProps) {
+  const { name, start, stop, reset, resolution = DEFAULT_TIMER_RESOLUTION } = props
+
   const $working = createStore<boolean>(false, { name: `${name} Working` })
   const $timer = createStore<number>(0, { name: `${name} Timer` })
 
