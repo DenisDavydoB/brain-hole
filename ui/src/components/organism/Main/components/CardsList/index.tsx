@@ -6,7 +6,7 @@ export default function CardsList() {
   const cards = useCards()
 
   return (
-    <Paper elevation={4} sx={{ p: 2 }}>
+    <Paper elevation={4} sx={{ p: 2, width: 'calc(100vh - 180px)' }}>
       <Grid container spacing={1}>
         {cards.map((card) => (
           <Card key={card.id} card={card} />

@@ -14,7 +14,6 @@ export default function MainTemplate(props: Props): ReactElement {
     <Stack alignItems="center" direction="column" width="100%">
       <Header />
       {children}
-      <Footer />
     </Stack>
   )
 }

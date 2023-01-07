@@ -2,7 +2,6 @@ import { v4 as uuid } from 'uuid'
 import type { CardItem } from './types.js'
 
 const CARD_PAIRS_NUMBER = 8
-
 export default function getCards(): CardItem[] {
   const cards: CardItem[] = []
 
