@@ -1,22 +1,19 @@
 import { Grid } from '@mui/material'
-import { ReactElement } from 'react'
+import { memo, ReactElement } from 'react'
 import FlippyCard from '@/components/molecules/FlippyCard/index.js'
-import { useGuessedCards, useOpenedCards } from '@/model/hooks.js'
 import { openCard } from '@/model/index.js'
 import type { CardItem } from '@/model/types.js'
 
+const CARD_COVER_URL = './other/cover.png'
+
 interface Props {
   card: CardItem
+  isGuessed: boolean
+  isOpened: boolean
 }
 
-export default function Card(props: Props): ReactElement {
-  const { card } = props
-
-  const openedCards = useOpenedCards()
-  const guessedCards = useGuessedCards()
-
-  const isGuessed = guessedCards.includes(card)
-  const isOpened = openedCards.includes(card)
+export const Card = memo(function Card(props: Props): ReactElement {
+  const { card, isGuessed, isOpened } = props
 
   const handleClick = () => {
     if (!isGuessed) openCard(card)
@@ -24,7 +21,7 @@ export default function Card(props: Props): ReactElement {
 
   const opacity = isGuessed ? '0' : '1'
 
-  const cardFront = <img height="100%" src={'./other/cover.png'} width="100%" />
+  const cardFront = <img height="100%" src={CARD_COVER_URL} width="100%" />
   const cardBack = <img height="100%" src={card.url} width="100%" />
 
   return (
@@ -38,4 +35,4 @@ export default function Card(props: Props): ReactElement {
       />
     </Grid>
   )
-}
+})
