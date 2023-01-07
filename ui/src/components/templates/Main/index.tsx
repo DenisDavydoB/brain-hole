@@ -1,4 +1,4 @@
-import { Stack } from '@mui/material'
+import { Paper, Stack } from '@mui/material'
 import { ReactElement, ReactNode } from 'react'
 import Header from '@/components/molecules/Header/index.js'
 
@@ -12,7 +12,9 @@ export default function MainTemplate(props: Props): ReactElement {
   return (
     <Stack alignItems="center" direction="column" width="100%">
       <Header />
-      {children}
+      <Paper elevation={0} sx={{ borderRadius: 8, width: '90%' }}>
+        {children}
+      </Paper>
     </Stack>
   )
 }
