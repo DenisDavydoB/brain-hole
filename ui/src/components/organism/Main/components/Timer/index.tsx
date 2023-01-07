@@ -1,8 +1,7 @@
 import { Stack, Typography } from '@mui/material'
-import { useStore } from 'effector-react'
 import prettyMilliseconds from 'pretty-ms'
 import { ReactElement } from 'react'
-import { $timer } from '@/shared/timer/index.js'
+import { useTimer } from '../../model/hooks.js'
 
 interface Props {
   name: string
@@ -11,7 +10,7 @@ interface Props {
 export default function Timer(props: Props): ReactElement {
   const { name } = props
 
-  const timer = useStore($timer)
+  const timer = useTimer()
 
   return (
     <Stack alignItems={'center'} gap={4}>
