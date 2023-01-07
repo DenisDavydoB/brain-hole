@@ -2,8 +2,8 @@ import { Stack } from '@mui/material'
 import CardsList from './components/CardsList/index.js'
 import Start from './components/Start/index.js'
 import Stats from './components/Stats/index.js'
-import { useApplicationState } from './model/hooks.js'
-import { applicationStart } from './model/index.js'
+import { useApplicationState } from '@/model/hooks.js'
+import { applicationStart } from '@/model/index.js'
 
 export default function Main() {
   const [isWorking, isDone] = useApplicationState()

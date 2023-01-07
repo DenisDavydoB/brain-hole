@@ -16,9 +16,9 @@
   },
   "include": [
     "src",
-    "src/components/organism/Main/model/init___.ts",
-    "src/components/organism/Main/model/helpers.ts",
-    "src/components/organism/Main/model/types.ts"
+    "src/model/init___.ts",
+    "src/shared/utils/helpers.ts",
+    "src/model/types.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

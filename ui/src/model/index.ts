@@ -1,5 +1,5 @@
 import { combine, createEffect, createEvent, guard } from 'effector'
-import getCards from './helpers.js'
+import getCards from '../shared/utils/helpers.js'
 import createApplicationState from '@/shared/effector/application.js'
 import { createTimer } from '@/shared/effector/timer.js'
 import { wait } from '@/shared/utils/wait.js'

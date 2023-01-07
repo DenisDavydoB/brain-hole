@@ -1,7 +1,7 @@
 import { Grid, Paper } from '@mui/material'
-import getCards from '../../model/helpers.js'
-import { useCards } from '../../model/hooks.js'
 import Card from '../Card/index.js'
+import { useCards } from '@/model/hooks.js'
+import getCards from '@/shared/utils/helpers.js'
 
 export default function CardsList() {
   const stateCards = useCards()

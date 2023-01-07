@@ -1,8 +1,8 @@
 import { Button, Paper, Stack, Typography } from '@mui/material'
 import prettyMilliseconds from 'pretty-ms'
 import { ReactElement } from 'react'
-import { useStats } from '../../model/hooks.js'
 import { Container } from './styles.js'
+import { useStats } from '@/model/hooks.js'
 
 const COLUMN_WIDTH = 100
 
