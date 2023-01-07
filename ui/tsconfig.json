@@ -14,11 +14,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": [
-    "src",
-    "src/model/init___.ts",
-    "src/shared/utils/helpers.ts",
-    "src/model/types.ts"
-  ],
+  "include": ["src", "src/model/init___.ts", "src/shared/utils/helpers.ts", "src/model/types.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
