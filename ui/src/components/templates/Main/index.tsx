@@ -1,6 +1,5 @@
 import { Stack } from '@mui/material'
 import { ReactElement, ReactNode } from 'react'
-import Footer from '@/components/molecules/Footer/index.js'
 import Header from '@/components/molecules/Header/index.js'
 
 type Props = {
