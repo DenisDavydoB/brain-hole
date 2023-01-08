@@ -4,6 +4,7 @@ import { wait } from '@/shared/utils/wait.js'
 const CARDS_GROUP_SIZE = 2
 const TIMER_DEFAULT_DURATION = 3000
 const SHOW_DEFAULT_DURATION = 750
+const DELAY_BEFORE_START = 1000
 
 export default function createApplicationState<T extends { id: string; cardId: string }>(
   fetchCardsFx: Effect<void, T[]>
@@ -18,18 +19,22 @@ export default function createApplicationState<T extends { id: string; cardId: s
   const clearGuessed = createEvent()
   const addToOpened = createEvent<T>()
   const setIsWorking = createEvent()
+  const setIsRun = createEvent()
 
   const delayInitFx = createEffect().use(() => wait(TIMER_DEFAULT_DURATION))
   const delayCloseFx = createEffect().use(() => wait(SHOW_DEFAULT_DURATION))
+  const delayBeforeStartFx = createEffect().use(() => wait(DELAY_BEFORE_START))
 
   const $cards = restore<T[]>(fetchCardsFx, [])
   const $guessedCards = createStore<T[]>([])
   const $openedCards = createStore<T[]>([])
   const $isWorking = createStore(false)
   const $isDone = createStore(false)
+  const $isRun = createStore(false)
 
   $isWorking.on(setIsWorking, () => true).reset(applicationDone)
   $isDone.on(applicationDone, () => true).reset(reset)
+  $isRun.on(setIsRun, () => true)
 
   $guessedCards.reset(clearGuessed)
   $guessedCards.on(addToGuessed, (state, payload) => {
@@ -65,9 +70,11 @@ export default function createApplicationState<T extends { id: string; cardId: s
     target: closeAll,
   })
 
-  forward({ from: applicationStart, to: [fetchCardsFx, reset] })
-  forward({ from: fetchCardsFx.done, to: [setIsWorking, openAll, delayInitFx] })
-  forward({ from: delayInitFx.done, to: [closeAll] })
+  forward({ from: applicationStart, to: [fetchCardsFx, reset, setIsRun] })
+  forward({ from: fetchCardsFx.done, to: [delayBeforeStartFx] })
+  forward({ from: delayBeforeStartFx.done, to: [openAll, delayInitFx] })
+
+  forward({ from: delayInitFx.done, to: [closeAll, setIsWorking] })
   forward({ from: applicationDone, to: [openAll, clearGuessed] })
 
   sample({ clock: openAll, source: $cards, target: $openedCards })
