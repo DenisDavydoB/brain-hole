@@ -35,6 +35,6 @@ const $stats = combine({ $timer, $guessedCards }).map((state) => ({
   guessedNumber: state.$guessedCards.length,
 }))
 
-const $appState = combine({ working, done, idle })
+const $appState = combine({ working, done, idle, loading })
 
 export { $cards, $guessedCards, $openedCards, $stats, openCard, applicationStart, loading, error, $appState }
