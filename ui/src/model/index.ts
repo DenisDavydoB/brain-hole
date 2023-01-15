@@ -10,9 +10,19 @@ const getCardsFx = createEffect(async () => {
 })
 
 const timerStop = createEvent()
+const timerStart = createEvent()
 
-const { $cards, $guessedCards, $openedCards, openCard, applicationStart, loading, error, working, done } =
-  createApplicationState(getCardsFx)
+const application = createApplicationState(getCardsFx)
+const { $cards, $guessedCards, $openedCards, openCard, applicationStart, loading, error, working, done, idle } =
+  application
+
+const $timer = createTimer({ name: 'Main', start: timerStart, stop: timerStop, reset: applicationStart })
+
+guard({
+  source: working,
+  filter: working,
+  target: timerStart,
+})
 
 guard({
   source: done,
@@ -20,13 +30,11 @@ guard({
   target: timerStop,
 })
 
-const $timer = createTimer({ name: 'Main', start: applicationStart, stop: timerStop, reset: applicationStart })
-
 const $stats = combine({ $timer, $guessedCards }).map((state) => ({
   timer: state.$timer,
   guessedNumber: state.$guessedCards.length,
 }))
 
-const $state = combine([working, done])
+const $appState = combine({ working, done, idle })
 
-export { $cards, $guessedCards, $openedCards, $stats, openCard, applicationStart, loading, error, $state }
+export { $cards, $guessedCards, $openedCards, $stats, openCard, applicationStart, loading, error, $appState }

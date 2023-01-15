@@ -4,12 +4,11 @@ import { useCards, useGuessedCards, useOpenedCards } from '@/model/hooks.js'
 import getCards from '@/shared/utils/helpers.js'
 
 export default function CardsList() {
-  const stateCards = useCards()
-
+  const applicationCards = useCards()
   const openedCards = useOpenedCards()
   const guessedCards = useGuessedCards()
 
-  const cards = stateCards.length == 0 ? getCards() : stateCards
+  const cards = applicationCards.length == 0 ? getCards() : applicationCards
 
   return (
     <Paper elevation={4} sx={{ p: 2, width: 'calc(100vh - 160px)' }}>

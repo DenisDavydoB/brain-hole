@@ -6,7 +6,7 @@ import { useApplicationState } from '@/model/hooks.js'
 import { applicationStart } from '@/model/index.js'
 
 export default function Main() {
-  const [isWorking, isDone] = useApplicationState()
+  const { done, idle } = useApplicationState()
 
   const handleClick = () => {
     applicationStart()
@@ -16,8 +16,8 @@ export default function Main() {
     <Stack alignItems="center" justifyContent={'center'} spacing={1} sx={{ p: 2, height: '100%', width: '100%' }}>
       <Stack direction={'column'} gap={2} sx={{ position: 'relative', width: 'fit-content' }}>
         <CardsList />
-        {!isWorking && !isDone ? <Start onClick={handleClick} /> : null}
-        {isDone ? <Stats onClick={handleClick} /> : null}
+        {idle ? <Start onClick={handleClick} /> : null}
+        {done ? <Stats onClick={handleClick} /> : null}
       </Stack>
     </Stack>
   )
