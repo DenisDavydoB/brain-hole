@@ -4,8 +4,8 @@ import { initReactI18next } from 'react-i18next'
 import resources from './i18resources/index.js'
 
 const createI18n = async (): Promise<i18nInstance> => {
-  const i18n = i18next.createInstance().use(initReactI18next)
-  i18n.use(LanguageDetector.default)
+  const i18n = i18next.createInstance().use(LanguageDetector).use(initReactI18next)
+
   await i18n.init({ resources, fallbackLng: 'en', debug: false })
 
   return i18n
