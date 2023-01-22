@@ -12,7 +12,7 @@ export default function MainTemplate(props: Props): ReactElement {
   return (
     <Stack alignItems="center" direction="column" width="100%">
       <Header />
-      <Paper elevation={0} sx={{ borderRadius: { sm: 8, xs: 4 }, width: { sm: '90%', xs: '87%' } }}>
+      <Paper elevation={0} sx={{ borderRadius: { sm: 8, xs: 4 }, width: { sm: '90%', xs: '92%' } }}>
         {children}
       </Paper>
     </Stack>

@@ -11,7 +11,7 @@ export default function CardsList() {
   const cards = applicationCards.length == 0 ? getCards() : applicationCards
 
   return (
-    <Paper elevation={4} sx={{ p: { md: 2, xs: 1 }, width: { sm: 'calc(100vh - 160px)' } }}>
+    <Paper elevation={4} sx={{ p: { md: 2, xs: 1 }, width: { sm: 'calc(100vh - 120px)' } }}>
       <Grid container spacing={1}>
         {cards.map((card) => (
           <Card
