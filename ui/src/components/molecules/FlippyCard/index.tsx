@@ -1,7 +1,7 @@
 import { SxProps } from '@mui/material'
 import { ReactElement, ReactNode } from 'react'
-import ReactCardFlip from 'react-card-flip'
 import { Container } from './styles.js'
+import FlippyContainer from '@/components/atoms/FlippyContainer/index.js'
 
 interface Props {
   front: ReactNode
@@ -16,10 +16,10 @@ export default function FlippyCard(props: Props): ReactElement {
 
   return (
     <Container {...rest} onClick={onClick}>
-      <ReactCardFlip isFlipped={isFlipped}>
+      <FlippyContainer isFlipped={isFlipped}>
         {front}
         {back}
-      </ReactCardFlip>
+      </FlippyContainer>
     </Container>
   )
 }
