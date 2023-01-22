@@ -31,7 +31,7 @@ export default function Start(props: Props): ReactElement {
             </Typography>
             <Typography variant="body1">{guessedNumber}</Typography>
           </Stack>
-          <Button size="large" sx={{ width: '360px' }} variant="contained" onClick={onClick}>
+          <Button size="large" sx={{ width: { md: '360px', xs: '100%' } }} variant="contained" onClick={onClick}>
             Start again
           </Button>
         </Stack>

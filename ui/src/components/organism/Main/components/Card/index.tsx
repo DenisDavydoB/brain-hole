@@ -25,7 +25,7 @@ export const Card = memo(function Card(props: Props): ReactElement {
   const cardBack = <img height="100%" src={card.url} width="100%" />
 
   return (
-    <Grid item sx={{ opacity, transition: 'opacity 750ms' }} xs={3}>
+    <Grid item sm={2} sx={{ opacity, transition: 'opacity 750ms' }} xs={3}>
       <FlippyCard
         back={cardBack}
         front={cardFront}

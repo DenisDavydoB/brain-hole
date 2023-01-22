@@ -7,14 +7,14 @@ export default function Header() {
       alignItems="center"
       direction="row"
       justifyContent="space-between"
-      sx={{ pl: 4, pr: 4, position: 'relative' }}
+      sx={{ px: { sm: 4, xs: 2 }, position: 'relative' }}
       width="100%"
     >
-      <Typography color={'ButtonFace'} sx={{ m: 2 }} variant="h5">
+      <Typography color={'ButtonFace'} sx={{ m: { sm: 2, xs: 1 } }} variant="h5">
         Find a match
       </Typography>
       <Timer />
-      <Avatar sx={{ m: 2 }}>OP</Avatar>
+      <Avatar sx={{ m: { sm: 2, xs: 1 } }}>OP</Avatar>
     </Stack>
   )
 }

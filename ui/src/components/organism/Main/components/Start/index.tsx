@@ -11,9 +11,9 @@ export default function Start(props: Props): ReactElement {
 
   return (
     <Container>
-      <Paper elevation={16} sx={{ p: 4, maxWidth: '80%' }}>
+      <Paper elevation={16} sx={{ p: 2, maxWidth: '80%' }}>
         <Stack alignItems={'center'} gap={2}>
-          <Button size="large" sx={{ width: '360px' }} variant="contained" onClick={onClick}>
+          <Button size="large" sx={{ width: { sm: '360px', xs: '100%' } }} variant="contained" onClick={onClick}>
             Start
           </Button>
           <Typography>
