@@ -20,7 +20,7 @@ export default function Start(props: Props): ReactElement {
     <Container>
       <Paper elevation={16} sx={{ p: 4, maxWidth: '80%' }}>
         <Stack direction={'column'} gap={1}>
-          <Typography variant="h6">Stats:</Typography>
+          <Typography variant="h6"> {t('components.stats.title')}</Typography>
           <Stack alignItems={'center'} direction={'row'} gap={4}>
             <Typography sx={{ width: COLUMN_WIDTH, flexShrink: 0 }} variant="body2">
               {t('components.stats.time')}
