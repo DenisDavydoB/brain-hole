@@ -13,7 +13,7 @@ interface Props {
 
 export default function Start(props: Props): ReactElement {
   const { onClick } = props
-  const { timer, guessedNumber } = useStats()
+  const { timer, mistakes } = useStats()
   const { t } = useTranslation()
 
   return (
@@ -31,7 +31,7 @@ export default function Start(props: Props): ReactElement {
             <Typography sx={{ width: COLUMN_WIDTH, flexShrink: 0 }} variant="body2">
               {t('components.stats.missing')}
             </Typography>
-            <Typography variant="body1">{guessedNumber}</Typography>
+            <Typography variant="body1">{mistakes}</Typography>
           </Stack>
           <Button size="large" sx={{ width: { md: '360px', xs: '100%' } }} variant="contained" onClick={onClick}>
             {t('common.buttons.tryAgain')}

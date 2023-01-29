@@ -13,8 +13,19 @@ const timerStop = createEvent()
 const timerStart = createEvent()
 
 const application = createApplicationState(getCardsFx)
-const { $cards, $guessedCards, $openedCards, openCard, applicationStart, loading, error, working, done, idle } =
-  application
+const {
+  $cards,
+  $guessedCards,
+  $openedCards,
+  $mistakes,
+  openCard,
+  applicationStart,
+  loading,
+  error,
+  working,
+  done,
+  idle,
+} = application
 
 const $timer = createTimer({ name: 'Main', start: timerStart, stop: timerStop, reset: applicationStart })
 
@@ -30,9 +41,9 @@ guard({
   target: timerStop,
 })
 
-const $stats = combine({ $timer, $guessedCards }).map((state) => ({
+const $stats = combine({ $timer, $mistakes }).map((state) => ({
   timer: state.$timer,
-  guessedNumber: state.$guessedCards.length,
+  mistakes: state.$mistakes,
 }))
 
 const $appState = combine({ working, done, idle, loading })
