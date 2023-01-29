@@ -19,6 +19,7 @@ export default function createApplicationState<T extends { id: string; cardId: s
   const clearGuessed = createEvent()
   const addToOpened = createEvent<T>()
   const setIsWorking = createEvent()
+  const mistakesInc = createEvent()
 
   const delayInitFx = createEffect().use(() => wait(TIMER_DEFAULT_DURATION))
   const delayCloseFx = createEffect().use(() => wait(SHOW_DEFAULT_DURATION))
@@ -30,10 +31,12 @@ export default function createApplicationState<T extends { id: string; cardId: s
   const $isWorking = createStore(false)
   const $isDone = createStore(false)
   const $isIdle = createStore(true)
+  const $mistakes = createStore(0)
 
   $isWorking.on(setIsWorking, () => true).reset(applicationDone)
   $isDone.on(applicationDone, () => true).reset(reset)
   $isIdle.on(applicationStart, () => false)
+  $mistakes.on(mistakesInc, (state) => state + 1).reset(reset)
 
   $guessedCards.reset(clearGuessed)
   $guessedCards.on(addToGuessed, (state, payload) => {
@@ -55,6 +58,12 @@ export default function createApplicationState<T extends { id: string; cardId: s
     source: $openedCards,
     filter: (cards) => cards.length === CARDS_GROUP_SIZE,
     target: [delayCloseFx, addToGuessed],
+  })
+
+  guard({
+    source: $openedCards,
+    filter: (cards) => cards.length === CARDS_GROUP_SIZE && cards.at(0)?.id !== cards.at(1)?.id,
+    target: mistakesInc,
   })
 
   guard({
@@ -82,6 +91,7 @@ export default function createApplicationState<T extends { id: string; cardId: s
     $cards,
     $guessedCards,
     $openedCards,
+    $mistakes,
     openCard,
     applicationStart,
     loading: fetchCardsFx.pending,
