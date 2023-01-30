@@ -23,8 +23,8 @@ export const Card = memo(function Card(props: Props): ReactElement {
 
   const opacity = isGuessed ? '0' : '1'
 
-  const cardFront = <img height={100} src={CARD_COVER_URL} style={style} width={100} />
-  const cardBack = <img height={100} src={card.url} style={style} width={100} />
+  const cardFront = <img height={200} src={CARD_COVER_URL} style={style} width={200} />
+  const cardBack = <img height={200} src={card.url} style={style} width={200} />
 
   return (
     <Grid item sm={2} sx={{ opacity, transition: 'opacity 750ms' }} xs={3}>
